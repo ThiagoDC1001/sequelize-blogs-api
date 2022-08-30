@@ -4,13 +4,14 @@
  * @param {import('sequelize').DataTypes} DataTypes
  */
 
-const createCategorieModel = (sequelize, DataTypes) => {
-  const Categorie = sequelize.define('Categorie', {
+const createCategoryModel = (sequelize, DataTypes) => {
+  const Category = sequelize.define('Category', {
+    id: DataTypes.INTEGER,
     name: DataTypes.STRING,    
   }, {
     tableName: 'Categories',    
   });  
-  return Categorie;
+  return Category;
 };
 
-module.exports = createCategorieModel;
+module.exports = createCategoryModel;
