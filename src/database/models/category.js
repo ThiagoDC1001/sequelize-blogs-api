@@ -6,7 +6,10 @@
 
 const createCategoryModel = (sequelize, DataTypes) => {
   const Category = sequelize.define('Category', {
-    id: DataTypes.INTEGER,
+    id: {
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     name: DataTypes.STRING,    
   }, {
     tableName: 'Categories',    
