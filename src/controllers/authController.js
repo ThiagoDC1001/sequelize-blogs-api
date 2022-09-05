@@ -6,7 +6,8 @@ const authController = {
   /** @type {import('express').RequestHandler} */
   async login(req, res) {    
     const data = await authService.validateBodyLogin(req.body);     
-    const user = await usersService.getByEmail(data.email);      
+    const user = await usersService.getByEmail(data.email);   
+    console.log(data.email);  
     if (!user) { return res.status(400).json({ message: 'Invalid fields' }); }
     const token = await createToken.makeToken(user);
     res.json({ token });

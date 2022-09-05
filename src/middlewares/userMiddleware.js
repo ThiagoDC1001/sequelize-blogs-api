@@ -7,8 +7,7 @@ const isUserValid = (user) => {
 
 const userMiddleware = (req, res, next) => {
   const user = req.body;  
-  const { error } = isUserValid(user);
-  console.log(error);
+  const { error } = isUserValid(user);  
   if (error) {    
     const [code, message] = error.message.split('|');
     return res.status(Number(code)).json({ message });
