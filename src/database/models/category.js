@@ -12,8 +12,7 @@ const createCategoryModel = (sequelize, DataTypes) => {
     primaryKey: true,
     type: DataTypes.INTEGER
     },
-    name: DataTypes.STRING,    
-    allowNull: false,
+    name: DataTypes.STRING,        
   }, {
     timestamps: false,
     tableName: 'Categories',    

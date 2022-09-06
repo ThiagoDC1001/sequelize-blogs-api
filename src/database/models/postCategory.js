@@ -6,11 +6,8 @@
 
 const createPostCategoryModel = (sequelize, DataTypes) => {
   const postCategory = sequelize.define('PostCategory', {
-    postId: {
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
-    categoryId: DataTypes.INTEGER,    
+    postId: DataTypes.INTEGER,    
+    categoryId: DataTypes.INTEGER   
   }, {
     tableName: 'PostCategories',    
   });  
