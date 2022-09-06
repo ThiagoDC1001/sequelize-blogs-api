@@ -9,4 +9,6 @@ middleware.tokenMiddleware,
 middleware.categoriesMiddleware, 
 categoriesController.create);
 
+categoriesRoute.get('/categories', middleware.tokenMiddleware, categoriesController.getAll);
+
 module.exports = categoriesRoute;

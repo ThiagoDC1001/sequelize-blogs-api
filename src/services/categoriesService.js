@@ -7,6 +7,14 @@ const categoriesService = {
     const category = await models.Category.create({ name });
     return category;
   },
+
+  async getAll() {
+    const categories = await models.Category.findAll(
+      { attributes: ['id', 'name'] },
+);
+    const allCategories = categories.map((e) => e.dataValues);
+    return allCategories;
+  },
 };
 
 module.exports = categoriesService;
