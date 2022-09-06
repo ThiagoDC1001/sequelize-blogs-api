@@ -27,6 +27,13 @@ const userService = {
     return allUsers;
   },
 
+  async getById(id) {
+    const userById = await models.User.findOne(
+      { where: { id }, attributes: { exclude: ['password'] } },
+      );
+      return userById;
+  },
+
 };
 
 module.exports = userService;
